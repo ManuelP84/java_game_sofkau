@@ -23,16 +23,7 @@ public class Main {
         System.out.println(totalQuestions.get(0).get(3).showCathegory());
         System.out.println(totalQuestions.get(0).get(3).showQuestion());
         System.out.println(totalQuestions.get(0).get(4).showCathegory());
-        System.out.println(totalQuestions.get(0).get(4).showQuestion());
-
-
-
-
-
-
-
-
-
+        System.out.println(totalQuestions.get(0).get(4).toString());
 
         }
 }
