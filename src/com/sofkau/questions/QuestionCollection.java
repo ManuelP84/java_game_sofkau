@@ -9,7 +9,7 @@ import java.io.*;
 public class QuestionCollection {
     private static List<Question> questionListByLevel = new ArrayList<>();
     private static List<List<Question>> totalQuestions = new ArrayList<>();
-    private final static String ROOT_JSON_FILE = "C:/Users/pined/Desktop/CODE/java/sofka/java11_game_sofkau/src/com/sofkau/questions/questions.json";
+    private final static String ROOT_JSON_FILE = "src/com/sofkau/questions/questions.json";
     private final static Integer TOTAL_LEVELS = 5;
 
     public static JsonArray createJsonArray(){
