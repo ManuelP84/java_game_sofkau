@@ -8,19 +8,15 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Score implements IUtilities {
+    private Player[] players = new Player[5];
 
-    private ArrayList<Player> listPlayers = new ArrayList<>();
-
-    public ArrayList orderListPlayers() {
-        ArrayList<Player> playersDisplayedOrderely = new ArrayList<>();
-
-        return playersDisplayedOrderely;
+    public Score(){
+        players[0] = new Player("manuel");
+        players[1] = new Player("manuel");
+        players[2] = new Player("manuel");
+        players[3] = new Player("manuel");
+        players[4] = new Player("manuel");
     }
-
-    public void addPlayer(Player player) {
-        this.listPlayers.add(player);
-    }
-
 
     @Override
     public void showMenu() {
@@ -45,7 +41,8 @@ public class Score implements IUtilities {
         }
         switch (opcion){
             case 1:
-                System.out.println("score");
+                System.out.println("**********SCORE**********");
+                showScore();
                 showMenu();
                 break;
             case 2:
@@ -57,6 +54,28 @@ public class Score implements IUtilities {
                 System.out.print("POR FAVOR INGRESA UN NUMERO ENTRE 1 Y 3, GRACIAS");
                 showMenu();
                 requestOption();
+        }
+    }
+
+    public void showScore(){
+        for (Player player : players){
+            System.out.println(player);
+        }
+    }
+
+    public void addScorePlayer(Player player){
+        int counter1 = 0;
+        while (counter1 < players.length){
+            if(player.getPrice() > players[counter1].getPrice()){
+                int counter2 = counter1;
+                while (counter2 < players.length){
+                    Player temp_player = players[counter2];
+                    players[counter2] = player;
+                    player = temp_player;
+                    counter2++;
+                }
+            }
+            counter1++;
         }
     }
 }
