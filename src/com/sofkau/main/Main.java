@@ -1,5 +1,6 @@
 package com.sofkau.main;
 
+import com.sofkau.models.Score;
 import com.sofkau.questions.QuestionCollection;
 
 import java.util.ArrayList;
@@ -9,7 +10,7 @@ import com.sofkau.models.Question;
 
 public class Main {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         List<List<Question>> totalQuestions = new ArrayList<>();
         List<List> questionListByLevel;
         totalQuestions = QuestionCollection.populateQuestionList();
@@ -25,5 +26,13 @@ public class Main {
         System.out.println(totalQuestions.get(0).get(4).showCathegory());
         System.out.println(totalQuestions.get(0).get(4).toString());
 
-        }
+
+        Score uno = new Score();
+
+        uno.showMenu();
+        uno.requestOption();
+    }
+
+
 }
+
