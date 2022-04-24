@@ -2,7 +2,11 @@ package com.sofkau.interfaces;
 
 public interface IUtilities {
 
-    void showMenu();
-    void requestOption();
+    public static void showMenu(){
+
+    }
+    public static void requestOption(){
+
+    }
 
 }

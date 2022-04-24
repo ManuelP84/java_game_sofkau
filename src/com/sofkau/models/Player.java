@@ -5,6 +5,10 @@ public class Player extends User implements Comparable<Player>{
     private int levelArchive;
     private int currenLevel;
 
+    public Player(){
+        super();
+    }
+
     public Player(String name) {
         super(name);
     }

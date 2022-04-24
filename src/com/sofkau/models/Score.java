@@ -21,7 +21,7 @@ public class Score implements IUtilities {
         playersSortedPrice.add(new Player("Manuel10", 5000, 1, 1));
     }
 
-    @Override
+
     public void showMenu() {
         System.out.println(" BIENVENIDOS A HIGH SCORE");
         System.out.println("1.ULTIMOS MEJORES PUNTAJES");
@@ -29,7 +29,7 @@ public class Score implements IUtilities {
         System.out.println("3.SALIR");
     }
 
-    @Override
+
     public void requestOption() {
         Scanner keyboard = new Scanner(System.in);
         System.out.print("INGRESA UNA OPCION: ");
