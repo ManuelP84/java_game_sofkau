@@ -6,6 +6,7 @@ import com.sofkau.models.Player;
 import com.sofkau.models.Score;
 import com.sofkau.questions.QuestionCollection;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
@@ -18,7 +19,7 @@ import javax.swing.plaf.synth.SynthOptionPaneUI;
 
 public class Main implements IUtilities {
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
         List<List<Question>> totalQuestions = new ArrayList<>();
         List<List> questionListByLevel;
         totalQuestions = QuestionCollection.populateQuestionList();
@@ -47,6 +48,7 @@ public class Main implements IUtilities {
                     case 2:
                         Integer opcionScore=0;
                         score.showMenu();
+
                         opcionScore = score.requestOption();
                         score.scoreUser();
                         score.cicloScore(opcionScore);

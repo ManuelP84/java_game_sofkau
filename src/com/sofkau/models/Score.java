@@ -66,13 +66,11 @@ public class Score implements IUtilities {
                     opcion = requestOption();
                     break;
                 case 2:
-                    System.out.println("opcion1");
                     //System.out.print("menu principal");
+                    opcion = 3;
                     break;
                 case 3:
-                    System.out.println("opcion1");
-                    //System.out.print("salir");
-                    break;
+                    System.exit(0);
                 default:
                     System.out.print("POR FAVOR INGRESA UN NUMERO ENTRE 1 Y 3, GRACIAS");
                     showMenu();
