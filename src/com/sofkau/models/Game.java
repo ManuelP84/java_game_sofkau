@@ -17,7 +17,7 @@ public class Game implements IUtilities {
         System.out.println("-1. INICIAR UNA PARTIDA");
         System.out.println("-2. VOLVER AL MENU");
         System.out.println("3. SALIR");
-        System.out.println(randomQuestion());
+        
     }
 
     public Integer requestOption() {
