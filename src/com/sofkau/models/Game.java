@@ -6,7 +6,6 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Game implements IUtilities {
-    @Override
     public void showMenu() {
         System.out.println("\n*********BIENVENIDOS AL JUEGO*********\n");
         System.out.println("1. Iniciar nueva partida");
@@ -14,7 +13,6 @@ public class Game implements IUtilities {
         System.out.println("3. Salir");
     }
 
-    @Override
     public void requestOption() {
         Scanner keyboard = new Scanner(System.in);
         System.out.print("Ingresa una opción: ");
