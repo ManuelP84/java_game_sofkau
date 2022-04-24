@@ -4,10 +4,13 @@ import com.sofkau.interfaces.IUtilities;
 import com.sofkau.questions.QuestionCollection;
 
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
 
 public class Game implements IUtilities {
+    private final Integer TOTAL_LEVELS = 5;
+
     public void showMenu() {
         System.out.println("\n*********BIENVENIDOS AL JUEGO*********\n");
         System.out.println("1. Iniciar nueva partida");
@@ -30,11 +33,11 @@ public class Game implements IUtilities {
         return option;
     }
 
-    public void gameCycle(Integer option) {
+    public void gameCycle(Integer option, Player player, Score score, List<List<Question>> totalQuestions) {
         do {
             switch (option){
                 case 1:
-                    //iniciar juego
+                    startGame(player, score, totalQuestions);
                     break;
                 case 2:
                     //volver al menu
@@ -50,9 +53,51 @@ public class Game implements IUtilities {
         }while (option != 3);
     }
 
-    public void startGame() {
-        QuestionCollection.populateQuestionList();
+    public void startGame(Player player, Score score, List<List<Question>> totalQuestions) {
+        // Contruimos cilo del juego por niveles. Total niveles = 5
+        Integer counter = 0;
+        while (counter < TOTAL_LEVELS){
+            //Validacion si la pregunta es correcta
+            Integer randomIndex = randomQuestion();
+            totalQuestions.get(counter).get(randomIndex).displayQuestion();
 
+
+            counter++;
+        }
     }
 
+    public Integer randomQuestion(){
+        Integer selectedQuestion;
+        selectedQuestion = (int)Math.random()*5;
+        return selectedQuestion;
+    }
+
+    public Boolean validateAnswer(Question question, String answer){
+        return question.showAnswer() == answer?true:false;
+    }
+
+    public String requestAnswer(){
+        String requestedAnswer;
+        Boolean isValidated = false;
+        Scanner keyboard = new Scanner(System.in);
+        do {
+            System.out.println("POR FAVOR INGRESA LA RESPUESTA: ");
+            requestedAnswer = keyboard.nextLine();
+            isValidated = validateTypo(requestedAnswer);
+        }while (!isValidated);
+        return requestedAnswer;
+    }
+
+    public Boolean validateTypo(String answer) {
+        Boolean isValidated = false;
+
+        switch (answer) {
+            case "1":
+            case "2":
+            case "3":
+            case "4":
+                isValidated = true;
+        }
+        return isValidated;
+    }
 }

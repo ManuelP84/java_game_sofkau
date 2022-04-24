@@ -13,13 +13,13 @@ public class User {
         this.name = name;
     }
 
-    public String requestName(){
+    public void requestName(){
         String name = "";
         Scanner keyboard = new Scanner(System.in);
         System.out.println("POR FAVOR INGRESA TU NOMBRE: ");
         name = keyboard.nextLine();
         System.out.println("GRACIAS, " + name + ", ESPERAMOS DISFRUTES EL JUEGO!!!");
-        return name;
+        this.name = name;
     }
 
     public String getName() {

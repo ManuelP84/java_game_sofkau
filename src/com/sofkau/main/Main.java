@@ -26,7 +26,11 @@ public class Main implements IUtilities {
         // Instanciamos objetos
         Game game  = new Game();
         Score score = new Score();
+
+
         Player player = new Player();
+        player.requestName();
+
 
         do {
             showMenu();
@@ -37,7 +41,7 @@ public class Main implements IUtilities {
                         Integer optionGame = 0;
                         game.showMenu();
                         optionGame = game.requestOption();
-                        game.gameCycle(optionGame);
+                        game.gameCycle(optionGame, player, score, totalQuestions);
                         // Logiga de Game
                         // ciclo
                         break;

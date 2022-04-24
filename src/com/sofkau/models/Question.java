@@ -31,6 +31,17 @@ public class Question {
         this.answer = answer;
     }
 
+    public void displayQuestion(){
+        System.out.println(this.cathegory);
+        System.out.println();
+        System.out.println(this.question);
+        System.out.println();
+        System.out.println("1. " + this.opton1);
+        System.out.println("2. " + this.opton2);
+        System.out.println("3. " + this.opton3);
+        System.out.println("4. " + this.opton4);
+    }
+
     // Getter and setter methods
     public String showLevel() {
         return level;
