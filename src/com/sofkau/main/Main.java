@@ -110,8 +110,3 @@ public class Main implements IUtilities {
         System.out.println(totalQuestions.get(0).get(4).toString());
 */
 
-/*        Score score = new Score();
-        score.scoreUser();
-        score.showMenu();
-        score.requestOption();*/
-
