@@ -6,7 +6,6 @@ import com.sofkau.models.Player;
 import com.sofkau.models.Score;
 import com.sofkau.questions.QuestionCollection;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
