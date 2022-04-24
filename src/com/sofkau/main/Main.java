@@ -1,6 +1,5 @@
 package com.sofkau.main;
 
-import com.sofkau.models.Player;
 import com.sofkau.models.Score;
 import com.sofkau.questions.QuestionCollection;
 
@@ -27,19 +26,8 @@ public class Main {
         System.out.println(totalQuestions.get(0).get(4).showCathegory());
         System.out.println(totalQuestions.get(0).get(4).toString());
 
-
         Score score = new Score();
-        score.addScorePlayer(new Player("Manuel1", 600, 1, 1));
-        score.addScorePlayer(new Player("Manuel2", 500, 1, 1));
-        score.addScorePlayer(new Player("Manuel3", 200, 1, 1));
-        score.addScorePlayer(new Player("Manuel4", 800, 1, 1));
-        score.addScorePlayer(new Player("Manuel5", 100, 1, 1));
-        score.addScorePlayer(new Player("Manuel6", 150, 1, 1));
-        score.addScorePlayer(new Player("Manuel7", 50, 1, 1));
-        score.addScorePlayer(new Player("Manuel7", 1000, 1, 1));
-        score.addScorePlayer(new Player("Manuel7", 500, 1, 1));
-        score.addScorePlayer(new Player("Manuel7", 5000, 1, 1));
-
+        score.scoreUser();
         score.showMenu();
         score.requestOption();
     }
