@@ -20,7 +20,6 @@ public class Main implements IUtilities {
 
     public static void main(String[] args) {
         List<List<Question>> totalQuestions = new ArrayList<>();
-        List<List> questionListByLevel;
         totalQuestions = QuestionCollection.populateQuestionList();
         Integer option=0;
 
@@ -35,12 +34,10 @@ public class Main implements IUtilities {
             {
                 switch (option){
                     case 1:
-                        // game.showMenu()
-                        // Menu:
-                        // Bienvenidos
-                        // 1. Iniciar juego
-                        // 2. Salir
-                        // game.requestOption()
+                        Integer optionGame = 0;
+                        game.showMenu();
+                        optionGame = game.requestOption();
+                        game.gameCycle(optionGame);
                         // Logiga de Game
                         // ciclo
                         break;

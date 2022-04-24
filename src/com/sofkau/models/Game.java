@@ -1,9 +1,11 @@
 package com.sofkau.models;
 
 import com.sofkau.interfaces.IUtilities;
+import com.sofkau.questions.QuestionCollection;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
 
 public class Game implements IUtilities {
     public void showMenu() {
@@ -13,30 +15,44 @@ public class Game implements IUtilities {
         System.out.println("3. Salir");
     }
 
-    public void requestOption() {
+    public Integer requestOption() {
         Scanner keyboard = new Scanner(System.in);
         System.out.print("Ingresa una opción: ");
-        int opcion = 0;
+        int option = 0;
         try {
-            opcion = keyboard.nextInt();
+            option = keyboard.nextInt();
 
         } catch (InputMismatchException e) {
             System.out.print("POR FAVOR INGRESA UN NUMERO ENTRE 1 Y 3 ");
             showMenu();
             requestOption();
         }
-        switch (opcion) {
-            case 1:
-                //nueva partida
-                break;
-            case 2:
-                //menu principal
-                break;
-            case 3:
-                //salir
-                break;
-            default:
-                System.out.print("POR FAVOR INGRESA UN NUMERO ENTRE 1 Y 3, GRACIAS");
-        }
+        return option;
     }
+
+    public void gameCycle(Integer option) {
+        do {
+            switch (option){
+                case 1:
+                    //iniciar juego
+                    break;
+                case 2:
+                    //volver al menu
+                    break;
+                case 3:
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.print("POR FAVOR INGRESA UN NUMERO ENTRE 1 Y 3, GRACIAS");
+                    showMenu();
+                    option = requestOption();
+            }
+        }while (option != 3);
+    }
+
+    public void startGame() {
+        QuestionCollection.populateQuestionList();
+
+    }
+
 }
