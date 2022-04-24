@@ -30,7 +30,7 @@ public class Score implements IUtilities {
     }
 
 
-    public void requestOption() {
+    public Integer requestOption() {
         Scanner keyboard = new Scanner(System.in);
         System.out.print("INGRESA UNA OPCION: ");
         int opcion=0;
@@ -42,32 +42,42 @@ public class Score implements IUtilities {
             showMenu();
             requestOption();
         }
-        switch (opcion){
-            case 1:
-                System.out.println("********************\n**********SCORE**********\n********************");
-                highestScore();
-                showHighestScore();
-                showMenu();
-                break;
-            case 2:
-                System.out.print("menu principal");
-                break;
-            case 3:
-                System.out.print("salir");
-                break;
-            default:
-                System.out.print("POR FAVOR INGRESA UN NUMERO ENTRE 1 Y 3, GRACIAS");
-                showMenu();
-                requestOption();
-        }
+        return opcion;
     }
+
     public void showHighestScore() {
         playersSortedPrice.stream().forEach(System.out::println);
     }
+
     public void highestScore () {
         Comparator<Player> priceComparator = Comparator.comparing(Player::getPrice);
         System.out.println();
         System.out.println("********************\n****Ranking de jugadores****\n********************\n");
         Collections.sort(playersSortedPrice, priceComparator.reversed());
+    }
+
+    public void cicloScore(Integer opcion){
+        do {
+            switch (opcion){
+                case 1:
+                    highestScore ();
+                    showHighestScore();
+                    showMenu();
+                    opcion = requestOption();
+                    break;
+                case 2:
+                    System.out.println("opcion1");
+                    //System.out.print("menu principal");
+                    break;
+                case 3:
+                    System.out.println("opcion1");
+                    //System.out.print("salir");
+                    break;
+                default:
+                    System.out.print("POR FAVOR INGRESA UN NUMERO ENTRE 1 Y 3, GRACIAS");
+                    showMenu();
+                    opcion = requestOption();
+            }
+        }while (opcion != 3);
     }
 }

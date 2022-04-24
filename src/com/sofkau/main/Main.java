@@ -45,7 +45,13 @@ public class Main implements IUtilities {
                         // ciclo
                         break;
                     case 2:
-                        // score.showMenu()
+                        Integer opcionScore=0;
+                        score.showMenu();
+                        opcionScore = score.requestOption();
+                        score.scoreUser();
+                        score.cicloScore(opcionScore);
+
+                        // score.cicloSclo(opcion);
                         // Menu:
                         // Bienvenidos
                         // 1. Ver ranking
@@ -71,17 +77,17 @@ public class Main implements IUtilities {
 
     }
 
-    public static int requestOption() {
+    public static Integer requestOption() {
         Scanner keyboard = new Scanner(System.in);
         System.out.print("Ingresa una opción: ");
-        int option=0;
+        int opcion=0;
         try {
-            option = keyboard.nextInt();
+            opcion = keyboard.nextInt();
 
         }catch (InputMismatchException e){
-            System.out.print("POR FAVOR INGRESA UN NUMERO ENTRE 1 Y 3 ");
+            System.out.print("Por favor ingresa un número entre 1 y 3: ");
         }
-    return option;
+    return opcion;
     }
 }
 

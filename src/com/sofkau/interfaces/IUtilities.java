@@ -5,8 +5,10 @@ public interface IUtilities {
     public static void showMenu(){
 
     }
-    public static void requestOption(){
 
+    public static Integer requestOption(){
+        Integer opcion=0;
+        return opcion;
     }
 
 }
