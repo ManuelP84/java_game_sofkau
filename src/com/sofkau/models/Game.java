@@ -12,21 +12,23 @@ public class Game implements IUtilities {
     private final Integer TOTAL_LEVELS = 5;
 
     public void showMenu() {
-        System.out.println("\n*********BIENVENIDOS AL JUEGO*********\n");
-        System.out.println("1. Iniciar nueva partida");
-        System.out.println("2. Volver al menu principal");
-        System.out.println("3. Salir");
+        System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+        System.out.println("***********************************\n***********-JUEGO-*****************\n***********************************\n");
+        System.out.println("-1. INICIAR UNA PARTIDA");
+        System.out.println("-2. VOLVER AL MENU");
+        System.out.println("3. SALIR");
+        System.out.println(randomQuestion());
     }
 
     public Integer requestOption() {
         Scanner keyboard = new Scanner(System.in);
-        System.out.print("Ingresa una opción: ");
+        System.out.print("INGRESA UNA OPCION: ");
         int option = 0;
         try {
             option = keyboard.nextInt();
 
         } catch (InputMismatchException e) {
-            System.out.print("POR FAVOR INGRESA UN NUMERO ENTRE 1 Y 3 ");
+            System.out.print("POR FAVOR, INGRESA UN NUMERO ENTRE 1 Y 3 ");
             showMenu();
             requestOption();
         }
@@ -60,15 +62,20 @@ public class Game implements IUtilities {
             //Validacion si la pregunta es correcta
             Integer randomIndex = randomQuestion();
             totalQuestions.get(counter).get(randomIndex).displayQuestion();
-
+            System.out.println(randomIndex);
 
             counter++;
         }
     }
 
     public Integer randomQuestion(){
-        Integer selectedQuestion;
-        selectedQuestion = (int)Math.random()*5;
+        Integer selectedQuestion = 0 ;
+        int max = 4;
+        int min = 0;
+        int rang= max - min +1;
+        for (int i = 0; i < 4; i++) {
+            selectedQuestion = (int ) (Math.random() * rang)+min;
+        }
         return selectedQuestion;
     }
 

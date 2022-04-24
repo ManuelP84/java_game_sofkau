@@ -32,7 +32,8 @@ public class Question {
     }
 
     public void displayQuestion(){
-        System.out.println(this.cathegory);
+        System.out.println("--------------------------------------------------------------------");
+        System.out.println(this.cathegory.toUpperCase());
         System.out.println();
         System.out.println(this.question);
         System.out.println();
@@ -40,6 +41,8 @@ public class Question {
         System.out.println("2. " + this.opton2);
         System.out.println("3. " + this.opton3);
         System.out.println("4. " + this.opton4);
+        System.out.println("--------------------------------------------------------------------");
+        System.out.println();
     }
 
     // Getter and setter methods

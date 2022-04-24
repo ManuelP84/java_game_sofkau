@@ -74,7 +74,7 @@ public class Main implements IUtilities {
         System.out.println("-------------------------------------------------------------------------------------------------------------------------");
         System.out.println("***********************************\n***********-BIENVENIDOS-***********\n***********************************\n");
         System.out.println();
-        System.out.println("POR FAVOR SIGUE  LAS INSTRUCCIONES DE  LA CONSOLA ");
+        System.out.println("POR FAVOR, SIGUE  LAS INSTRUCCIONES DE  LA CONSOLA ");
         System.out.println();
         System.out.println("-1. COMENZAR UN NUEVO JUEGO");
         System.out.println("-2. PUNTAJES ALTOS");
@@ -90,7 +90,7 @@ public class Main implements IUtilities {
             opcion = keyboard.nextInt();
 
         }catch (InputMismatchException e){
-            System.out.print("POR FAVOR INGRESA UN NUMERO ENTRE 1 Y 3: ");
+            System.out.print("POR FAVOR, INGRESA UN NUMERO ENTRE 1 Y 3: ");
         }
     return opcion;
     }

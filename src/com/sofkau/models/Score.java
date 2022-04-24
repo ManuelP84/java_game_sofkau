@@ -74,7 +74,7 @@ public class Score implements IUtilities {
                 case 3:
                     System.exit(0);
                 default:
-                    System.out.print("POR FAVOR INGRESA UN NUMERO ENTRE 1 Y 3, GRACIAS");
+                    System.out.print("POR FAVOR, INGRESA UN NUMERO ENTRE 1 Y 3, GRACIAS");
                     showMenu();
                     opcion = requestOption();
             }
