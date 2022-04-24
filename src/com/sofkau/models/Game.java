@@ -38,9 +38,11 @@ public class Game implements IUtilities {
             switch (option){
                 case 1:
                     startGame(player, score, totalQuestions);
+                    showMenu();
+                    requestOption();
                     break;
                 case 2:
-                    //volver al menu
+                    option = 3;
                     break;
                 case 3:
                     System.exit(0);
@@ -58,9 +60,16 @@ public class Game implements IUtilities {
         Integer counter = 0;
         while (counter < TOTAL_LEVELS){
             //Validacion si la pregunta es correcta
+            String requestedAnswer;
+            Question question;
+            Boolean validatedAnswer;
             Integer randomIndex = randomQuestion();
-            totalQuestions.get(counter).get(randomIndex).displayQuestion();
-
+            System.out.println(randomIndex);
+            question = totalQuestions.get(counter).get(randomIndex);
+            question.displayQuestion();
+            requestedAnswer = requestAnswer();
+            validatedAnswer = validateAnswer(question, requestedAnswer);
+            if(validatedAnswer == false){break;}
 
             counter++;
         }
@@ -73,7 +82,7 @@ public class Game implements IUtilities {
     }
 
     public Boolean validateAnswer(Question question, String answer){
-        return question.showAnswer() == answer?true:false;
+        return answer.equals(question.showAnswer())?true:false;
     }
 
     public String requestAnswer(){
