@@ -72,22 +72,26 @@ public class Main implements IUtilities {
 
 
     public static void showMenu() {
-        System.out.println("********BIENVENIDOS********");
-        System.out.println("1. Comenzar un nuevo juego.");
-        System.out.println("2. Puntajes altos.");
-        System.out.println("3. Salir.");
-
+        System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+        System.out.println("***********************************\n***********-BIENVENIDOS-***********\n***********************************\n");
+        System.out.println();
+        System.out.println("POR FAVOR SIGUE  LAS INSTRUCCIONES DE  LA CONSOLA ");
+        System.out.println();
+        System.out.println("-1. COMENZAR UN NUEVO JUEGO");
+        System.out.println("-2. PUNTAJES ALTOS");
+        System.out.println("-3. SALIR");
+        System.out.println();
     }
 
     public static Integer requestOption() {
         Scanner keyboard = new Scanner(System.in);
-        System.out.print("Ingresa una opción: ");
+        System.out.print("INGRESA UNA OPCIÓN: ");
         int opcion=0;
         try {
             opcion = keyboard.nextInt();
 
         }catch (InputMismatchException e){
-            System.out.print("Por favor ingresa un número entre 1 y 3: ");
+            System.out.print("POR FAVOR INGRESA UN NUMERO ENTRE 1 Y 3: ");
         }
     return opcion;
     }
