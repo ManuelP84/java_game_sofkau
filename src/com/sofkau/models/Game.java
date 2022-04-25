@@ -62,8 +62,6 @@ public class Game implements IUtilities {
             Question question;
             Boolean validatedAnswer;
             Integer randomIndex = randomQuestion();
-
-            System.out.println(randomIndex);
             question = totalQuestions.get(counter).get(randomIndex);
             question.displayQuestion();
             requestedAnswer = requestAnswer();
