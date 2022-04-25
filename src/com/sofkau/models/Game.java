@@ -14,7 +14,7 @@ public class Game implements IUtilities {
         System.out.println("***********************************\n***********-JUEGO-*****************\n***********************************\n");
         System.out.println("-1. INICIAR UNA PARTIDA");
         System.out.println("-2. VOLVER AL MENU");
-        System.out.println("3. SALIR");
+        System.out.println("-3. SALIR");
     }
 
     public Integer requestOption() {
@@ -32,11 +32,12 @@ public class Game implements IUtilities {
         return option;
     }
 
-    public void gameCycle(Integer option, Player player, Score score, List<List<Question>> totalQuestions) {
+    public Integer gameCycle(Integer option, Player player, Score score, List<List<Question>> totalQuestions) {
+        Integer price = 0;
         do {
             switch (option){
                 case 1:
-                    startGame(player, score, totalQuestions);
+                    price = startGame(player, score, totalQuestions);
                     option=3;
                     break;
                 case 2:
@@ -51,24 +52,29 @@ public class Game implements IUtilities {
                     option = requestOption();
             }
         }while (option != 3);
+        return price;
     }
 
-    public void startGame(Player player, Score score, List<List<Question>> totalQuestions) {
-        // Contruimos cilo del juego por niveles. Total niveles = 5
+    public Integer startGame(Player player, Score score, List<List<Question>> totalQuestions) {
+        Integer price = 0;
         Integer counter = 0;
         while (counter < TOTAL_LEVELS){
-            //Validacion si la pregunta es correcta
             String requestedAnswer;
             Question question;
             Boolean validatedAnswer;
             Integer randomIndex = randomQuestion();
             question = totalQuestions.get(counter).get(randomIndex);
+            //System.out.println("NIVEL DE DIFICULTAD " + question.showLevel());
             question.displayQuestion();
             requestedAnswer = requestAnswer();
             validatedAnswer = validateAnswer(question, requestedAnswer);
-            if(validatedAnswer == false){break;}
+            if(validatedAnswer == false){
+                break;
+            }
+            price += 100;
             counter++;
         }
+        return price;
     }
 
     public Integer randomQuestion(){

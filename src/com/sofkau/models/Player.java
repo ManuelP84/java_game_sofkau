@@ -2,8 +2,6 @@ package com.sofkau.models;
 
 public class Player extends User implements Comparable<Player>{
     private int price ;
-    private int levelArchive;
-    private int currenLevel;
 
     public Player(){
         super();
@@ -13,15 +11,17 @@ public class Player extends User implements Comparable<Player>{
         super(name);
     }
 
-    public Player(String name, int price, int levelArchive, int currenLevel) {
+    public Player(String name, int price) {
         super(name);
         this.price = price;
-        this.levelArchive = levelArchive;
-        this.currenLevel = currenLevel;
     }
 
     public int getPrice() {
         return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
     }
 
     @Override

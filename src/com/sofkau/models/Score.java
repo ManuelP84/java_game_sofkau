@@ -4,20 +4,10 @@ import com.sofkau.interfaces.IUtilities;
 import java.util.*;
 
 public class Score implements IUtilities {
-    private ArrayList users = new ArrayList<>();
-    List<Player> playersSortedPrice = new ArrayList<>(users);
+    List<Player> playersSortedPrice = new ArrayList<>();
 
-    public void scoreUser() {
-        playersSortedPrice.add(new Player("Manuel1", 600, 1, 1));
-        playersSortedPrice.add(new Player("Manuel2", 500, 1, 1));
-        playersSortedPrice.add(new Player("Manuel3", 200, 1, 1));
-        playersSortedPrice.add(new Player("Manuel4", 800, 1, 1));
-        playersSortedPrice.add(new Player("Manuel5", 100, 1, 1));
-        playersSortedPrice.add(new Player("Manuel6", 150, 1, 1));
-        playersSortedPrice.add(new Player("Manuel7", 50, 1, 1));
-        playersSortedPrice.add(new Player("Manuel8", 1000, 1, 1));
-        playersSortedPrice.add(new Player("Manuel9", 500, 1, 1));
-        playersSortedPrice.add(new Player("Manuel10", 5000, 1, 1));
+    public void setPlayer(Player player){
+        this.playersSortedPrice.add(player);
     }
 
     public void showMenu() {
@@ -45,13 +35,13 @@ public class Score implements IUtilities {
     }
 
     public void showHighestScore() {
+        System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+        System.out.println("***********************************\n*******-RANKING DE JUGADORES-******\n***********************************\n");
         playersSortedPrice.stream().forEach(System.out::println);
     }
 
-    public void highestScore () {
+    public void orderScore () {
         Comparator<Player> priceComparator = Comparator.comparing(Player::getPrice);
-        System.out.println("-------------------------------------------------------------------------------------------------------------------------");
-        System.out.println("***********************************\n*******-RANKING DE JUGADORES-******\n***********************************\n");
         Collections.sort(playersSortedPrice, priceComparator.reversed());
     }
 
@@ -59,10 +49,9 @@ public class Score implements IUtilities {
         do {
             switch (opcion){
                 case 1:
-                    highestScore ();
+                    orderScore ();
                     showHighestScore();
-                    showMenu();
-                    opcion = requestOption();
+                    opcion = 3;
                     break;
                 case 2:
                     //System.out.print("menu principal");

@@ -18,13 +18,11 @@ public class Main implements IUtilities {
         List<List<Question>> totalQuestions = new ArrayList<>();
         totalQuestions = QuestionCollection.populateQuestionList();
         Integer option=0;
+        Integer price = 0;
 
         // Instanciamos objetos
         Game game  = new Game();
         Score score = new Score();
-
-        Player player = new Player();
-        player.requestName();
 
         do {
             showMenu();
@@ -32,27 +30,23 @@ public class Main implements IUtilities {
             {
                 switch (option){
                     case 1:
+                        Player player = new Player();
+                        player.requestName();
                         Integer optionGame = 0;
                         game.showMenu();
                         optionGame = game.requestOption();
-                        game.gameCycle(optionGame, player, score, totalQuestions);
-                        // Logiga de Game
-                        // ciclo
+                        price = game.gameCycle(optionGame, player, score, totalQuestions);
+                        player.setPrice(price);
+                        score.setPlayer(player);
+                        System.out.println();
+                        System.out.println("GRACIAS POR PARTICIPAR " + player.getName() +" TU PREMIO ACUMULADO FUE DE: " + player.getPrice());
+                        System.out.println();
                         break;
                     case 2:
                         Integer opcionScore=0;
                         score.showMenu();
                         opcionScore = score.requestOption();
-                        score.scoreUser();
                         score.cicloScore(opcionScore);
-
-                        // score.cicloSclo(opcion);
-                        // Menu:
-                        // Bienvenidos
-                        // 1. Ver ranking
-                        // 2. Salir
-                        // score.requestOption()
-                        // Logica de Score
                         break;
                     case 3:
                         System.exit(0);
