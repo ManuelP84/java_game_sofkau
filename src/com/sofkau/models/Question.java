@@ -31,7 +31,7 @@ public class Question {
     }
 
     public void displayQuestion() {
-        System.out.println("--------------------------------------------------------------------");
+        System.out.println("-------------------------------------------------------------------------------------------------------------------------");
         System.out.println("NIVEL DE DIFICULTAD: " + this.level);
         System.out.println();
         System.out.println("CATEGORIA DE LA PREGUNTA \n"+"-------"+this.cathegory.toUpperCase()+"-------");
@@ -42,7 +42,7 @@ public class Question {
         System.out.println("2. " + this.opton2);
         System.out.println("3. " + this.opton3);
         System.out.println("4. " + this.opton4);
-        System.out.println("--------------------------------------------------------------------");
+        System.out.println("-------------------------------------------------------------------------------------------------------------------------");
         System.out.println();
     }
 
