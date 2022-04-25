@@ -1,5 +1,5 @@
 {
-  "questions1": [
+  "1": [
     {
       "categoria": "Cultura General",
       "nivel": "1",
@@ -51,7 +51,7 @@
       "respuesta": "4"
     }
   ],
-  "questions2": [
+  "2": [
     {
       "categoria": "Cultura General",
       "nivel": "2",
@@ -103,7 +103,7 @@
       "respuesta": "1"
     }
   ],
-  "questions3": [
+  "3": [
     {
       "categoria": "Cultura General",
       "nivel": "3,",
@@ -155,7 +155,7 @@
       "respuesta": "2"
     }
   ],
-  "questions4": [
+  "4": [
     {
       "categoria": "Cultura General",
       "nivel": "4",
@@ -207,7 +207,7 @@
       "respuesta": "3"
     }
   ],
-  "questions5": [
+  "5": [
     {
       "categoria": "Cultura General",
       "nivel": "5",
