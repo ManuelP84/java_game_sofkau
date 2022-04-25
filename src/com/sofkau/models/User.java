@@ -16,12 +16,12 @@ public class User {
         String name = "";
         Scanner keyboard = new Scanner(System.in);
         System.out.println();
-        System.out.println("HOLA, SI ESTAS AQUI ES POR QUE ESTAS DISPUEST@ A ASUMIR EL RETO");
+        System.out.println("HOLA, SI ESTAS AQUI ES POR QUE ESTAS DISPUEST@ A ASUMIR EL RETO.");
         System.out.println();
         System.out.print("POR FAVOR, INGRESA TU NOMBRE: ");
         name = keyboard.nextLine();
         System.out.println();
-        System.out.println("GRACIAS, " + name.toUpperCase() + ", ESPERAMOS DISFRUTES EL JUEGO!!! ;)");
+        System.out.println("GRACIAS " + name.toUpperCase() + ", ESPERAMOS DISFRUTES EL JUEGO!!! ;)");
         this.name = name;
     }
 

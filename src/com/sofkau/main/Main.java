@@ -55,7 +55,7 @@ public class Main {
                         player.setPrice(price);
                         score.setPlayer(player);
                         System.out.println();
-                        System.out.println("GRACIAS POR PARTICIPAR " + player.getName().toUpperCase() + " TU PREMIO ACUMULADO FUE DE: " + player.getPrice());
+                        System.out.println("GRACIAS POR PARTICIPAR " + player.getName().toUpperCase() + ", TU PREMIO ACUMULADO FUE DE $" + player.getPrice() + " DOLARES");
                         System.out.println();
                         break;
                     case 2:
