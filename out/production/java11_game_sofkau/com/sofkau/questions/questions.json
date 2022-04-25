@@ -1,5 +1,5 @@
 {
-  "questions": [
+  "questions1": [
     {
       "categoria": "Cultura General",
       "nivel": "1",
@@ -49,7 +49,9 @@
       "opcion3": "Jorge Isaacs",
       "opcion4": "Gabriel García Márquez",
       "respuesta": "4"
-    },
+    }
+  ],
+  "questions2": [
     {
       "categoria": "Cultura General",
       "nivel": "2",
@@ -99,7 +101,9 @@
       "opcion3": "Pinocho",
       "opcion4": "Fantasía",
       "respuesta": "1"
-    },
+    }
+  ],
+  "questions3": [
     {
       "categoria": "Cultura General",
       "nivel": "3,",
@@ -149,7 +153,9 @@
       "opcion3": "Perú",
       "opcion4": "Ecuador",
       "respuesta": "2"
-    },
+    }
+  ],
+  "questions4": [
     {
       "categoria": "Cultura General",
       "nivel": "4",
@@ -199,7 +205,9 @@
       "opcion3": "Tim Burton",
       "opcion4": "Christopher Nolan",
       "respuesta": "3"
-    },
+    }
+  ],
+  "questions5": [
     {
       "categoria": "Cultura General",
       "nivel": "5",

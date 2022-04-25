@@ -5,15 +5,11 @@ import com.sofkau.models.Game;
 import com.sofkau.models.Player;
 import com.sofkau.models.Score;
 import com.sofkau.questions.QuestionCollection;
-
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
-
 import com.sofkau.models.Question;
-
-import javax.swing.plaf.synth.SynthOptionPaneUI;
 
 
 public class Main implements IUtilities {
@@ -27,10 +23,8 @@ public class Main implements IUtilities {
         Game game  = new Game();
         Score score = new Score();
 
-
         Player player = new Player();
         player.requestName();
-
 
         do {
             showMenu();
@@ -69,7 +63,6 @@ public class Main implements IUtilities {
         while(true);
     }
 
-
     public static void showMenu() {
         System.out.println("-------------------------------------------------------------------------------------------------------------------------");
         System.out.println("***********************************\n***********-BIENVENIDOS-***********\n***********************************\n");
@@ -95,18 +88,3 @@ public class Main implements IUtilities {
     return opcion;
     }
 }
-
-
-/*
-        System.out.println(totalQuestions.get(0).get(0).showCathegory());
-        System.out.println(totalQuestions.get(0).get(0).showQuestion());
-        System.out.println(totalQuestions.get(0).get(1).showCathegory());
-        System.out.println(totalQuestions.get(0).get(1).showQuestion());
-        System.out.println(totalQuestions.get(0).get(2).showCathegory());
-        System.out.println(totalQuestions.get(0).get(2).showQuestion());
-        System.out.println(totalQuestions.get(0).get(3).showCathegory());
-        System.out.println(totalQuestions.get(0).get(3).showQuestion());
-        System.out.println(totalQuestions.get(0).get(4).showCathegory());
-        System.out.println(totalQuestions.get(0).get(4).toString());
-*/
-

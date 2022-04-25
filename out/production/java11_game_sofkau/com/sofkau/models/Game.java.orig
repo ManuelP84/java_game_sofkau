@@ -1,6 +1,8 @@
 package com.sofkau.models;
 
 import com.sofkau.interfaces.IUtilities;
+import com.sofkau.questions.QuestionCollection;
+
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
@@ -15,6 +17,7 @@ public class Game implements IUtilities {
         System.out.println("-1. INICIAR UNA PARTIDA");
         System.out.println("-2. VOLVER AL MENU");
         System.out.println("3. SALIR");
+        
     }
 
     public Integer requestOption() {
@@ -37,7 +40,8 @@ public class Game implements IUtilities {
             switch (option){
                 case 1:
                     startGame(player, score, totalQuestions);
-                    option=3;
+                    showMenu();
+                    requestOption();
                     break;
                 case 2:
                     option = 3;
@@ -62,13 +66,18 @@ public class Game implements IUtilities {
             Question question;
             Boolean validatedAnswer;
             Integer randomIndex = randomQuestion();
-
+<<<<<<< HEAD
+            totalQuestions.get(counter).get(randomIndex).displayQuestion();
+            System.out.println(randomIndex);
+=======
             System.out.println(randomIndex);
             question = totalQuestions.get(counter).get(randomIndex);
             question.displayQuestion();
             requestedAnswer = requestAnswer();
             validatedAnswer = validateAnswer(question, requestedAnswer);
             if(validatedAnswer == false){break;}
+>>>>>>> 7a2eeac79c1db89933e21fd8c826c71c92ef4ec7
+
             counter++;
         }
     }

@@ -1,7 +1,6 @@
 package com.sofkau.models;
 
 import com.sofkau.interfaces.IUtilities;
-
 import java.util.*;
 
 public class Score implements IUtilities {
@@ -21,7 +20,6 @@ public class Score implements IUtilities {
         playersSortedPrice.add(new Player("Manuel10", 5000, 1, 1));
     }
 
-
     public void showMenu() {
         System.out.println("-------------------------------------------------------------------------------------------------------------------------");
         System.out.println("***********************************\n************-HIGH SCORE-***********\n***********************************\n");
@@ -30,7 +28,6 @@ public class Score implements IUtilities {
         System.out.println("-3. SALIR");
         System.out.println();
     }
-
 
     public Integer requestOption() {
         Scanner keyboard = new Scanner(System.in);
