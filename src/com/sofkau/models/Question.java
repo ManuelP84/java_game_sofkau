@@ -30,7 +30,7 @@ public class Question {
         this.answer = answer;
     }
 
-    public void displayQuestion(){
+    public void displayQuestion() {
         System.out.println("--------------------------------------------------------------------");
         System.out.println(this.cathegory.toUpperCase());
         System.out.println();

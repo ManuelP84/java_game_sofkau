@@ -1,9 +1,9 @@
 package com.sofkau.models;
 
-public class Player extends User implements Comparable<Player>{
-    private int price ;
+public class Player extends User implements Comparable<Player> {
+    private int price;
 
-    public Player(){
+    public Player() {
         super();
     }
 
@@ -34,6 +34,7 @@ public class Player extends User implements Comparable<Player>{
             return 0;
         }
     }
+
     @Override
     public String toString() {
         return "Player: " + getName() + " Price: " + price;

@@ -3,16 +3,16 @@ package com.sofkau.models;
 import java.util.Scanner;
 
 public class User {
-    private  String name;
+    private String name;
 
-    public User(){
+    public User() {
     }
 
     public User(String name) {
         this.name = name;
     }
 
-    public void requestName(){
+    public void requestName() {
         String name = "";
         Scanner keyboard = new Scanner(System.in);
         System.out.println();

@@ -1,15 +1,17 @@
 package com.sofkau.models;
 
 import com.sofkau.interfaces.IUtilities;
+
 import java.util.*;
 
 public class Score implements IUtilities {
     List<Player> playersSortedPrice = new ArrayList<>();
 
-    public void setPlayer(Player player){
+    public void setPlayer(Player player) {
         this.playersSortedPrice.add(player);
     }
 
+    @Override
     public void showMenu() {
         System.out.println("-------------------------------------------------------------------------------------------------------------------------");
         System.out.println("***********************************\n************-HIGH SCORE-***********\n***********************************\n");
@@ -19,14 +21,15 @@ public class Score implements IUtilities {
         System.out.println();
     }
 
+    @Override
     public Integer requestOption() {
         Scanner keyboard = new Scanner(System.in);
         System.out.print("INGRESA UNA OPCIÓN: ");
-        int opcion=0;
+        int opcion = 0;
         try {
-             opcion = keyboard.nextInt();
+            opcion = keyboard.nextInt();
 
-        }catch (InputMismatchException e){
+        } catch (InputMismatchException e) {
             System.out.print("POR FAVOR INGRESA UN NUMERO ENTRE 1 Y 3 ");
             showMenu();
             requestOption();
@@ -40,16 +43,16 @@ public class Score implements IUtilities {
         playersSortedPrice.stream().forEach(System.out::println);
     }
 
-    public void orderScore () {
+    public void orderScore() {
         Comparator<Player> priceComparator = Comparator.comparing(Player::getPrice);
         Collections.sort(playersSortedPrice, priceComparator.reversed());
     }
 
-    public void cicloScore(Integer opcion){
+    public void cicloScore(Integer opcion) {
         do {
-            switch (opcion){
+            switch (opcion) {
                 case 1:
-                    orderScore ();
+                    orderScore();
                     showHighestScore();
                     opcion = 3;
                     break;
@@ -64,6 +67,6 @@ public class Score implements IUtilities {
                     showMenu();
                     opcion = requestOption();
             }
-        }while (opcion != 3);
+        } while (opcion != 3);
     }
 }
