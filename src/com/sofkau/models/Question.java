@@ -32,9 +32,9 @@ public class Question {
 
     public void displayQuestion(){
         System.out.println("--------------------------------------------------------------------");
-        System.out.println(this.cathegory.toUpperCase());
+        System.out.println("NIVEL DE DIFICULTAD: " + this.level);
         System.out.println();
-        System.out.println("NIVEL DE DIFICULTAD " + this.level);
+        System.out.println("CATEGORIA DE LA PREGUNTA \n"+"-------"+this.cathegory.toUpperCase()+"-------");
         System.out.println();
         System.out.println(this.question);
         System.out.println();

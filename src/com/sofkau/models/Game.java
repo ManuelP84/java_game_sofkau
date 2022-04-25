@@ -97,7 +97,7 @@ public class Game implements IUtilities {
         Boolean isValidated = false;
         Scanner keyboard = new Scanner(System.in);
         do {
-            System.out.println("POR FAVOR INGRESA LA RESPUESTA: ");
+            System.out.print("POR FAVOR INGRESA LA RESPUESTA: ");
             requestedAnswer = keyboard.nextLine();
             isValidated = validateTypo(requestedAnswer);
         }while (!isValidated);
