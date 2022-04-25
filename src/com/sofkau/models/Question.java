@@ -10,7 +10,6 @@ public class Question {
     private String opton4;
     private String answer;
 
-    //Constructor
     public Question(
             String cathegory,
             String level,
@@ -31,69 +30,24 @@ public class Question {
         this.answer = answer;
     }
 
-    // Getter and setter methods
-    public String showLevel() {
-        return level;
-    }
-
-    public void setLevel(String level) {
-        this.level = level;
-    }
-
-    public String showCathegory() {
-        return cathegory;
-    }
-
-    public void setCathegory(String cathegory) {
-        this.cathegory = cathegory;
-    }
-
-    public String showQuestion() {
-        return question;
-    }
-
-    public void setQuestion(String question) {
-        this.question = question;
-    }
-
-    public String showOpton1() {
-        return opton1;
-    }
-
-    public void setOpton1(String opton1) {
-        this.opton1 = opton1;
-    }
-
-    public String showOpton2() {
-        return opton2;
-    }
-
-    public void setOpton2(String opton2) {
-        this.opton2 = opton2;
-    }
-
-    public String showOpton3() {
-        return opton3;
-    }
-
-    public void setOpton3(String opton3) {
-        this.opton3 = opton3;
-    }
-
-    public String showOpton4() {
-        return opton4;
-    }
-
-    public void setOpton4(String opton4) {
-        this.opton4 = opton4;
+    public void displayQuestion() {
+        System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+        System.out.println("NIVEL DE DIFICULTAD: " + this.level);
+        System.out.println();
+        System.out.println("CATEGORIA DE LA PREGUNTA \n"+"-------"+this.cathegory.toUpperCase()+"-------");
+        System.out.println();
+        System.out.println(this.question);
+        System.out.println();
+        System.out.println("1. " + this.opton1);
+        System.out.println("2. " + this.opton2);
+        System.out.println("3. " + this.opton3);
+        System.out.println("4. " + this.opton4);
+        System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+        System.out.println();
     }
 
     public String showAnswer() {
         return answer;
-    }
-
-    public void setAnswer(String answer) {
-        this.answer = answer;
     }
 
     @Override
